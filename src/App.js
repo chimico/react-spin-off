@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { indigo, teal } from '@material-ui/core/colors'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { indigo, teal } from '@mui/material/colors'
 
 import Routes from './routes'
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     useNextVariants: true,
   },
@@ -19,16 +19,12 @@ const theme = createMuiTheme({
   },
 });
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <MuiThemeProvider theme={theme}>
-          <Routes />
-        </MuiThemeProvider>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+  );
 }
 
 export default App;

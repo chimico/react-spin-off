@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Redirect, withRouter } from "react-router-dom";
+import { Component } from 'react';
+import { redirect } from 'react-router-dom';
 
 class Main extends Component {
   render() {
-    return (<Redirect from="/" to="/home" />);
+    return redirect('/home');
   }
 }
 
-export default withRouter(Main);
+export default Main;

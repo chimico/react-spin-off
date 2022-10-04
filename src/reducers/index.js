@@ -1,6 +1,11 @@
-import { combineReducers } from 'redux';
-import { connectRouter } from 'connected-react-router';
+const reducer = (state, action) => {
+  switch(action.type) {
+    case 'action description':
+      // do something with the action
+      return state; // return the new state
+    default:
+      throw new Error();
+  }
+};
 
-export default (history) => combineReducers({
-  router: connectRouter(history),
-});
+export default reducer;
